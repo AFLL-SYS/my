@@ -13,15 +13,13 @@ import { Java } from "@/components/ui/svgs/java";
 import { Csharp } from "@/components/ui/svgs/csharp";
 
 export const DATA = {
-  name: "Dillion Verma",
-  initials: "DV",
-  url: "https://dillion.io",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
-  summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+   name: "唐健辉",
+  initials: "AFLL",
+  url: "https://你的项目名.vercel.app",
+  location: "中国 成都",
+  locationLink: "https://www.google.com/maps/place/成都",
+  description: "全栈开发者 / 网络安全爱好者 / Arch Linux 用户",
+  summary: "热爱技术，专注于前端开发与网络安全，日常折腾Linux系统与AI大模型，喜欢分享技术干货与实战经验。",
   avatarUrl: "/me.png",
   skills: [
     { name: "React", icon: ReactLight },
@@ -29,16 +27,15 @@ export const DATA = {
     { name: "Typescript", icon: Typescript },
     { name: "Node.js", icon: Nodejs },
     { name: "Python", icon: Python },
-    { name: "Go", icon: Golang },
-    { name: "Postgres", icon: Postgresql },
+    { name: "Golang", icon: Golang },
+    { name: "Postgresql", icon: Postgresql },
     { name: "Docker", icon: Docker },
     { name: "Kubernetes", icon: Kubernetes },
-    { name: "Java", icon: Java },
-    { name: "C++", icon: Csharp },
+    { name: "网络安全", icon: Csharp },
   ],
   navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/", icon: HomeIcon, label: "首页" },
+    { href: "/blog", icon: NotebookIcon, label: "博客" },
   ],
   contact: {
     email: "hello@example.com",
