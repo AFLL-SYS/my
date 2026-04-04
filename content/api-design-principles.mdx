@@ -1,33 +1,72 @@
 ---
-title: "REST API Design Principles That Stand the Test of Time"
-publishedAt: "2024-12-12"
-updatedAt: "2024-12-12"
-author: "John Doe"
-summary: "Learn how to design APIs that developers love to use and are easy to maintain."
-image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=192&fit=crop"
+title: "Arch Linux 系统配置与优化指南"
+publishedAt: "2026-04-04"
+updatedAt: "2026-04-04"
+author: "唐健辉 / AFLL"
+summary: "从零搭建个性化Arch Linux环境，解决硬件适配、桌面美化、性能优化全流程问题。"
+image: "/buildspace.jpg"
 ---
 
-# REST API Design Principles That Stand the Test of Time
+# Arch Linux 系统配置与优化指南
 
-Great APIs feel boring in the best way: predictable, consistent, and easy to reason about. When the surface area is simple, teams ship faster and clients break less often.
+作为一名Arch Linux爱好者，我从2025年开始深度折腾这套滚动发行版，从系统安装到桌面美化，从硬件适配到性能优化，踩过无数坑，也总结了一套完整的实战经验。这篇指南会把我所有的实操技巧分享给你，帮你打造一个高效、美观、完全个性化的Linux工作环境。
 
-This is a lightweight checklist you can keep in mind while designing new endpoints or reviewing an existing API.
+## 一、系统安装与基础配置
+### 1.1 安装前准备
+- 硬件适配：针对AMD R9 7940HX + NVIDIA 4070笔记本的双显卡适配方案
+- 分区规划：EFI分区、根分区、home分区的合理分配，兼顾稳定性与扩展性
+- 网络配置：安装过程中配置无线网络，确保系统安装后直接联网
 
-## Core principles
+### 1.2 基础系统优化
+- 换源：配置国内镜像源（中科大、清华），大幅提升软件下载速度
+- 系统更新：执行`pacman -Syu`完成首次全量更新，解决依赖冲突
+- 必备工具安装：`git`、`vim`、`base-devel`等基础开发工具，为后续操作铺路
 
-- Use clear, consistent **resource names** (think nouns).
-- Keep behavior aligned with **HTTP semantics** (read vs write).
-- Return **consistent response shapes** so clients don’t guess.
-- Prefer **sane defaults** with optional query parameters for filtering/sorting.
+## 二、NVIDIA显卡驱动配置（笔记本避坑指南）
+### 2.1 驱动安装
+- 官方驱动安装：`nvidia`、`nvidia-utils`、`nvidia-settings`核心包安装
+- 双显卡切换：配置PRIME渲染，解决独显不工作、功耗过高的问题
+- 开源驱动备选：`nouveau`驱动的安装与配置，适合临时调试
 
-## A simple checklist
+### 2.2 性能与散热优化
+- 功耗限制：通过`nvidia-smi`限制显卡功耗，解决笔记本散热压力
+- 驱动降级：针对特定硬件的驱动版本选择，避免兼容性问题
+- 硬件加速：开启VA-API硬件加速，提升视频播放、图形渲染效率
 
-1. Pick stable resource paths (plural nouns are a common convention).
-2. Use a small set of status codes consistently.
-3. Document pagination and what “next/previous” means.
-4. Be explicit about authentication and authorization requirements.
-5. Add brief examples in docs for the “happy path” and common errors.
+## 三、桌面环境美化（黑客风格打造）
+### 3.1 窗口管理器选择
+- i3wm / Sway：平铺式窗口管理器，打造高效无鼠标工作流
+- Hyprland：现代Wayland compositor，实现丝滑动画与透明效果
+- KDE / GNOME：传统桌面环境的个性化美化方案
 
-## Wrap-up
+### 3.2 外观与工具配置
+- 终端美化：`alacritty`/`kitty`终端配置，搭配`zsh`+`oh-my-zsh`打造炫酷命令行
+- 状态栏：`polybar`/`waybar`自定义状态栏，显示系统状态、网络、天气等信息
+- 图标与主题：`Papirus`图标主题、`Catppuccin`深色主题，统一系统视觉风格
 
-If you optimize for consistency first, your API will be easier to document, easier to test, and easier for others to adopt.
+## 四、开发环境搭建
+### 4.1 编程工具配置
+- Python环境：`pyenv`多版本管理，`pip`换源，`Jupyter`/`Spyder`开发工具配置
+- 前端工具：`Node.js`、`VS Code`安装与插件配置，适配Next.js项目开发
+- 本地AI部署：`Ollama`安装与配置，实现离线大模型运行，适配创意写作、代码生成
+
+### 4.2 网络安全工具
+- 渗透测试工具：`nmap`、`wireshark`、`metasploit`等工具安装与配置
+- 系统安全加固：防火墙`ufw`配置，SSH安全加固，防止非法入侵
+- 隐私保护：VPN、代理工具配置，保护网络访问隐私
+
+## 五、日常维护与问题排查
+### 5.1 系统维护
+- 滚动更新注意事项：避免系统崩溃的更新技巧，依赖冲突解决方法
+- 备份方案：`timeshift`系统备份，`rsync`数据备份，防止数据丢失
+- 日志排查：`journalctl`系统日志查看，快速定位系统问题
+
+### 5.2 常见问题解决
+- 显卡驱动崩溃：快速恢复系统的应急方案
+- 软件包损坏：`pacman`修复命令，解决包损坏问题
+- 启动失败：GRUB修复，系统引导问题排查
+
+## 写在最后
+Arch Linux的魅力就在于「完全可控」，你可以把系统打造成完全符合自己使用习惯的样子。从一个纯净的系统，到一个高效、美观、个性化的工作环境，每一步折腾都是对Linux系统的深度理解。希望这篇指南能帮你少踩坑，快速打造属于自己的Arch Linux工作环境。
+
+如果你有任何问题，欢迎在我的个人主页留言交流，一起折腾Linux，探索技术的无限可能！
