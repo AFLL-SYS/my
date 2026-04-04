@@ -1,12 +1,10 @@
-
-
 ---
-title: "网络安全工作站：从渗透测试环境到红队基础设施全实战"
-publishedAt: "2026-04-04"
-updatedAt: "2026-04-04"
-author: "唐健辉 / AFLL"
-summary: "一份覆盖渗透测试环境构建、工具链部署、流量隐匿、漏洞研究及自动化编排的全栈安全指南，面向红队与防御实战场景。"
-image: "/security-workspace.jpg"
+标题: 网络安全工作站：渗透测试环境与红队基础设施实战
+发表于: 2026-04-04
+更新于: 2026-04-04
+作者: 唐健辉 / AFLL
+摘要: 一份覆盖渗透测试环境构建、工具链部署、流量隐匿、漏洞研究及自动化编排的全栈安全指南，面向红队与防御实战场景。
+图片: /buildspace.jpg
 ---
 
 # 网络安全工作站
@@ -38,12 +36,10 @@ image: "/security-workspace.jpg"
 
 ### 2.1 操作系统选型
 
-选择 **Arch Linux** 或 **Kali Linux (定制版)** 作为宿主机：
+选择 **Arch Linux** 作为宿主机：
 
-- Arch Linux：滚动更新，AUR 提供最新安全工具
-- Kali Linux：预装大量工具，但建议仅用作虚拟机模板
-
-本方案采用 Arch Linux + KVM/QEMU 虚拟化，确保测试环境与宿主机严格隔离。
+- 滚动更新，AUR 提供最新安全工具
+- 搭配 KVM/QEMU 虚拟化，确保测试环境与宿主机严格隔离
 
 ### 2.2 虚拟化与快照策略
 
@@ -80,7 +76,8 @@ pacman -S nmap metasploit burpsuite zap sqlmap hydra john aircrack-ng wireshark-
 3.2 红队工具集（C2/后渗透）
 
 ```bash
-yay -S covenant cobaltstrike (需手动导入) mythic sliver
+yay -S covenant mythic sliver
+# Cobalt Strike 需手动导入
 ```
 
 建议使用 Docker/Podman 运行 C2 服务端：
@@ -260,5 +257,6 @@ aide --init
 
 对于追求控制、隐匿与效率的安全从业者，亲手搭建的工作站，永远比任何开箱即用的方案更值得信赖。
 
+```
 
 
